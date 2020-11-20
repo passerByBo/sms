@@ -1,0 +1,21 @@
+.collapse-container{
+    height: 55px;
+    transition:height 0.3s ease-in;
+    overflow: hidden;
+}
+.container-warp{
+    min-height: 55px;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    padding-right: 50px;
+    /* padding-bottom: 200px; */
+}
+.button-wrap{
+    width: 60px;
+    top: 12px;
+    right: 0;
+    position: absolute;
+}
