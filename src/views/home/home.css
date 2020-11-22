@@ -2,7 +2,6 @@
     display: flex;
     flex:1;
     flex-direction: column;
-    background-color: #FFFFFF;
     padding: 18px 20px;
     width: 900px;
 }
@@ -10,5 +9,28 @@
 .buttons{
     display: flex;
     flex-direction: row;
+    background-color: #FFFFFF;
+    }
+
+.form-container{
+    display:flex;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 32px 36px;
+    margin-bottom: 12px;;
+}
+.list-container{
+    background-color: #FFFFFF;
+    padding: 34px 26px 36px;
+}
+.ant-table-thead > tr > th {
+    background-color: #E2F1Fd
+}
+.collapse-wrap{
+  padding: 20px 50px 20px 20px;
+  background-color: #EFF4F5;
 }
 
+.ant-input-affix-wrapper{
+    border-color: #222222;
+}

@@ -6,6 +6,7 @@ import "./home.css";
 import { lists, conditions } from './data';
 import CheckButton from '../../components/check-button/check-button';
 import getColor from '../../util/getColor';
+import { SearchOutlined } from '@ant-design/icons';
 const { Search } = Input;
 const { TabPane } = Tabs;
 const { RangePicker } = DatePicker;
@@ -296,28 +297,33 @@ class Home extends Component {
             </Row>
           </Form>
         </Modal>
-        <div className="buttons">
-          <Search
-            placeholder="请输入！"
-            allowClear
-            enterButton="查询"
-            onSearch={this.onSearch}
-            style={{ marginBottom: 10 }}
-          />
-          <Button onClick={this.advancedSearch}>高级检索</Button>
+        <div className="form-container">
+          <div className="buttons">
+            <Search
+              placeholder="请输入标准名称或者标准编号"
+              allowClear
+              enterButton="查询"
+              onSearch={this.onSearch}
+              style={{ marginBottom: 10 }}
+              prefix={<SearchOutlined />}
+            />
+            <Button type="primary" onClick={this.advancedSearch}>高级检索</Button>
+          </div>
+          <div className="collapse-wrap">
+          {
+            conditions.map(lists => (
+              <SunCollapse key={lists.key}>
+                <CheckButton onChange={this.checkButtonChange} data={lists}></CheckButton>
+              </SunCollapse>
+            ))
+          }
+          </div>
         </div>
-        <span style={{ fontSize: 18, color: '#263256', fontWeight: 600 }}>标准查询</span>
-        {
-          conditions.map(lists => (
-            <SunCollapse key={lists.key}>
-              <CheckButton onChange={this.checkButtonChange} data={lists}></CheckButton>
-            </SunCollapse>
-          ))
-        }
+
         <div className="list-container">
           <Tabs defaultActiveKey="1" tabPosition={'top'}>
             {this.state.conditionTabs.map((tab, index) => <TabPane tab={`${tab}`} key={tab}>
-              <Table bordered columns={columns} dataSource={this.state.standLists} />
+              <Table pagination={{ position: ['bottomCenter'] }} bordered columns={columns} dataSource={this.state.standLists} />
             </TabPane>)}
           </Tabs>
         </div>

@@ -43,11 +43,11 @@ export default function CheckButton(props) {
                 <img src={allSelected ? picSelectedArrow : picNoermalArrow}></img>
                 <span className={allSelected ? "text selected-text" : "text"}>{data.key}</span>
             </div>
-            <div className="item-wrap">
+            {/* <div className="item-wrap"> */}
                 {
                     children.map((item, index) => <div onClick={buttomClick.bind(this, item, index)} className={selectedList[index] ? 'button button-selected' : 'button'} key={item.key}>{item.key}</div>)
                 }
-            </div>
+            {/* </div> */}
 
         </div>
     )

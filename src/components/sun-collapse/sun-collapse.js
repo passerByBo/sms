@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button } from 'antd';
 import './sun-collapse.css'
-const HEIGHT = 55;
+const HEIGHT = 50;
 export default class SunCollapse extends Component {
   constructor(props) {
     super(props);
